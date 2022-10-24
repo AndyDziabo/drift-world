@@ -1,29 +1,34 @@
 import React, { useState } from "react";
+import ClassifiedsForm from './ClassifiedsForm';
+import ClassifiedsList from "./ClassifiedsList";
 
 function Classifieds(){
-    const [selectedImage, setSelectedImage] = useState(null);
+    const [showAd, setShowAd] = useState(false);
+    
+    function handleClick() {
+        setShowAd(!showAd);
+        console.log(showAd)
+    }
       
     return (
         <div>
-        <h1>Upload and Display Image usign React Hook's</h1>
-        {selectedImage && (
             <div>
-            <img alt="not fount" width={"250px"} src={URL.createObjectURL(selectedImage)} />
-            <br />
-            <button onClick={()=>setSelectedImage(null)}>Remove</button>
+                Classifieds
+                <button onClick={handleClick}>{showAd ? "Show all Ads" : "Create new Ad"}</button>
             </div>
-        )}
-        <br />
-           
-        <br /> 
-        <input
-            type="file"
-            name="myImage"
-            onChange={(event) => {
-                console.log(event.target.files[0]);
-                setSelectedImage(event.target.files[0]);
-            }}
-        />
+            <div>
+            {showAd ? (
+                <>
+                New Ad
+                <ClassifiedsForm />
+                </>
+            ) : (
+                <>
+                Ads
+                <ClassifiedsList />
+                </>
+            )}
+            </div>
         </div>
     )
 }
