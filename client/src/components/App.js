@@ -8,6 +8,7 @@ import Events from "./Events";
 import Services from "./Services";
 import Media from "./Media";
 import Logo from "./Logo";
+import User from "./User";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -29,6 +30,9 @@ console.log(user)
       <NavBar user={user} setUser={setUser} />
       <Logo />
       <Switch>
+        <Route exact path="/user">
+          <User />
+        </Route>
         <Route exact path="/classifieds">
           <Classifieds user={user} />
         </Route>

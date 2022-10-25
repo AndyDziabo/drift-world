@@ -10,6 +10,22 @@ class UsersController < ApplicationController
     def show
       render json: @current_user
     end
+
+    def user_ads
+      render json: @current_user.classifieds, status: :ok
+    end
+
+    def user_events
+      render json: @current_user.events, status: :ok
+    end
+
+    def user_services
+      render json: @current_user.services, status: :ok
+    end
+
+    def user_hotdogs
+      render json: @current_user.hotdogs, status: :ok
+    end
   
     private
   

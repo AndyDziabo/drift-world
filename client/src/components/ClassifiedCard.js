@@ -1,15 +1,83 @@
+import { useEffect, useState } from "react";
+import ClassifiedComments from "./ClassifiedComment";
 
-function ClassifiedCard({ classified }) {
-    console.log(classified)
+function ClassifiedCard({ classified, setToggle }) {
+    const [comments, setComments] = useState([]);
+    const [errors, setErrors] = useState([]);
+
+    useEffect(() => {
+        fetch(`/classifieds/${classified.id}`)
+            .then((r) => r.json())
+            .then(data => setComments(data));
+    }, []);
+
+    function handleClick() {
+        setToggle(true);
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log(e.target.comment.value)
+        fetch("/comments", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                comment: e.target.comment.value,
+                classified_id: classified.id,
+            }),
+        }).then((r) => {
+            if(r.ok){
+                r.json().then((com) => setComments(...comments, com));
+            }else{
+                r.json().then((err) => setErrors(err.errors));
+            }
+        });
+    }
+
+    console.log(errors)
     return(
         <li>
-            <h2>{classified.name}</h2>
-            <p>{classified.date}</p>
-            <p>{classified.location}</p>
-            <p>{classified.entry_fee}</p>
-            <p>{classified.description}</p>
-            <img src={classified.image} />
-            <p>posted by: {classified.user.name}</p>
+            <div className="ad-top">
+                <div className="ad-title">
+                    <h2>{classified.title}</h2>
+                    <div>$ {classified.price}</div>
+                    <div>{classified.location}</div>
+                </div>
+                <div className="ad-btn">
+                    posted by: {classified.user.name}
+                    <button onClick={handleClick}>All Ads</button>
+                </div>
+            </div>
+            <div className="ad-bottom">
+                <div className="ad-image">
+                    <img src={classified.image} />
+                </div>
+                <div className="ad-description">
+                    {classified.description}
+                </div>
+            </div>
+            <div>
+                Comments
+                <div>
+                    <ul>
+                        {comments.map((comment) => (<ClassifiedComments key={comment.id} comment={comment} />))}
+                    </ul>
+                </div>
+                <div>
+                    <form onSubmit={handleSubmit}>
+                        <textarea
+                            rows="5"
+                            cols="50"
+                            id="comment"
+                            autoComplete="off"
+                            name="comment"
+                        />
+                        <input type="submit" value="Submit" />
+                    </form>
+                </div>
+            </div>
         </li>
     )
 }

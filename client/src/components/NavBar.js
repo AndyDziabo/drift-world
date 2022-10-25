@@ -13,7 +13,9 @@ function NavBar({ user, setUser }) {
     return (
       <div className="nav">
         <span>
-          {user ? user.name : "please login"}
+          <NavLink to="/user" exact>
+            {user ? user.name : "please login"}
+          </NavLink>
         </span>
         {/* <span>
         <NavLink to="/" exact>

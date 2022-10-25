@@ -9,6 +9,12 @@ class EventsController < ApplicationController
         render json: event, status: :created
     end
 
+    def destroy
+        event = Event.find(params[:id])
+        event.destroy
+        head :no_content
+    end
+
     private
 
     def events_params

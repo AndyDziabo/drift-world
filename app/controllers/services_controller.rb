@@ -9,6 +9,12 @@ class ServicesController < ApplicationController
         render json: service, status: :created
     end
 
+    def destroy
+        service = Service.find(params[:id])
+        service.destroy
+        head :no_content
+    end
+
     private
 
     def services_params
