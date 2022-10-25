@@ -19,12 +19,10 @@ function Events(){
             <div>
             {showEvent ? (
                 <>
-                New Event
-                <EventsForm />
+                <EventsForm setShowEvent={setShowEvent} />
                 </>
             ) : (
                 <>
-                Events
                 <EventsList />
                 </>
             )}

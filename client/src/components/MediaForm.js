@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 
-function ServicesForm() {
+function MediaForm() {
     const [title, setTitle] = useState("");
-    const [location, setLocation] = useState("");
     const [description, setDescription] = useState("");
     const [image, setImage] = useState("");
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(title, location, description, image)
+        console.log(title, description, image)
     }
 
     return(
         <div>
-            Services Form
+            Media Form
             <form onSubmit={handleSubmit}>
                 <table>
                     <tr>
@@ -27,20 +26,6 @@ function ServicesForm() {
                                 autoComplete="off"
                                 value={title}
                                 onChange={(e) => setTitle(e.target.value)}
-                            />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label htmlFor="location">Location</label>
-                        </td>
-                        <td>
-                            <input
-                                type="text"
-                                id="location"
-                                autoComplete="off"
-                                value={location}
-                                onChange={(e) => setLocation(e.target.value)}
                             />
                         </td>
                     </tr>
@@ -85,4 +70,4 @@ function ServicesForm() {
     )
 }
 
-export default ServicesForm
+export default MediaForm

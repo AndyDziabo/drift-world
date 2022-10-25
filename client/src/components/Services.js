@@ -20,12 +20,10 @@ function Services(){
             <div>
             {showService ? (
                 <>
-                New Services
                 <ServicesForm />
                 </>
             ) : (
                 <>
-                Services
                 <ServicesList />
                 </>
             )}

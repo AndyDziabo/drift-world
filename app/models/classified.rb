@@ -1,4 +1,5 @@
 class Classified < ApplicationRecord
-    has_many :user_classifieds
-    has_many :users, through: :user_classifieds
+  belongs_to :user
+  has_many :comments
+
 end

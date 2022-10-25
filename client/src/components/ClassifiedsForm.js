@@ -1,20 +1,41 @@
 import React, { useState } from "react";
 
-function ClassifiedsForm() {
+function ClassifiedsForm({ setShowAd, user }) {
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState();
     const [location, setLocation] = useState("");
     const [description, setDescription] = useState("");
     const [image, setImage] = useState("");
+    const [errors, setErrors] = useState([]);
 
     function handleSubmit(e) {
         e.preventDefault();
         console.log(title, price, location, description, image, e.target.category.value)
+        fetch("/classifieds", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                title: title,
+                price: price,
+                location: location,
+                description: description,
+                image: image,
+                category: e.target.category.value,
+            }),
+        }).then((r) => {
+            if(r.ok){
+                setShowAd(false);
+            }else{
+                r.json().then((err) => setErrors(err.errors));
+            }
+        });
     }
-
+console.log(errors)
     return(
         <div>
-            ClassifiedsForm
+            Classifieds Form
             <form onSubmit={handleSubmit}>
                 <table>
                     <tr>
@@ -103,12 +124,6 @@ function ClassifiedsForm() {
                             <input type="submit" value="Submit" />
                         </td>
                     </tr>
-
-                
-                
-
-                
-
                 </table>
             </form>
         </div>

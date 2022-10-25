@@ -30,19 +30,19 @@ console.log(user)
       <Logo />
       <Switch>
         <Route exact path="/classifieds">
-          <Classifieds />
+          <Classifieds user={user} />
         </Route>
         <Route exact path="/login">
           <Login />
         </Route>
         <Route exact path="/events">
-          <Events />
+          <Events user={user} />
         </Route>
         <Route exact path="/services">
-          <Services />
+          <Services user={user} />
         </Route>
         <Route exact path="/media">
-          <Media />
+          <Media user={user} />
         </Route>
         <Route exact path="/">
           <Home />

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ClassifiedsForm from './ClassifiedsForm';
 import ClassifiedsList from "./ClassifiedsList";
 
-function Classifieds(){
+function Classifieds({ user }){
     const [showAd, setShowAd] = useState(false);
     
     function handleClick() {
@@ -19,12 +19,10 @@ function Classifieds(){
             <div>
             {showAd ? (
                 <>
-                New Ad
-                <ClassifiedsForm />
+                <ClassifiedsForm setShowAd={setShowAd} user={user}  />
                 </>
             ) : (
                 <>
-                Ads
                 <ClassifiedsList />
                 </>
             )}

@@ -4,10 +4,11 @@ class CreateClassifieds < ActiveRecord::Migration[7.0]
       t.string :title
       t.integer :price
       t.string :location
-      t.string :description
+      t.text :description
       t.string :image
       t.boolean :category
-
+      t.belongs_to :user, null: false, foreign_key: true
+      
       t.timestamps
     end
   end

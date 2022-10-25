@@ -5,8 +5,9 @@ class CreateEvents < ActiveRecord::Migration[7.0]
       t.datetime :date
       t.string :location
       t.integer :entry_fee
-      t.string :description
+      t.text :description
       t.string :image
+      t.belongs_to :user, null: false, foreign_key: true
 
       t.timestamps
     end

@@ -1,2 +1,0 @@
-class UserServicesController < ApplicationController
-end

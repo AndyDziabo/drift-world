@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  resources :user_services
+  resources :media
+  resources :comments
   resources :services, only: [:index, :show, :create, :update, :destroy]
-  resources :user_events
   resources :events, only: [:index, :show, :create, :update, :destroy]
-  resources :user_classifieds
   resources :classifieds, only: [:index, :show, :create, :update, :destroy]
   resources :users, only: [:create, :show]
 
