@@ -2,7 +2,7 @@ class User < ApplicationRecord
     has_many :classifieds
     has_many :events
     has_many :services
-    has_many :media
+    has_many :hotdogs
     has_many :comments
   
 

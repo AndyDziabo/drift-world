@@ -1,13 +1,31 @@
 import React, { useState } from "react";
 
-function MediaForm() {
+function MediaForm({ setShowMedia }) {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [image, setImage] = useState("");
+    const [errors, setErrors] = useState([]);
 
     function handleSubmit(e) {
         e.preventDefault();
         console.log(title, description, image)
+        fetch("/hotdogs", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                title: title,
+                description: description,
+                image: image,
+            }),
+        }).then((r) => {
+            if(r.ok){
+                setShowMedia(false);
+            }else{
+                r.json().then((err) => setErrors(err.errors));
+            }
+        });
     }
 
     return(

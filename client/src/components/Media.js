@@ -19,7 +19,7 @@ function Media(){
             <div>
             {showMedia ? (
                 <>
-                <MediaForm />
+                <MediaForm setShowMedia={setShowMedia} />
                 </>
             ) : (
                 <>

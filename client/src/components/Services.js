@@ -20,7 +20,7 @@ function Services(){
             <div>
             {showService ? (
                 <>
-                <ServicesForm />
+                <ServicesForm setShowService={setShowService} />
                 </>
             ) : (
                 <>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :media
+  resources :hotdogs, only: [:index, :show, :create, :update, :destroy]
   resources :comments
   resources :services, only: [:index, :show, :create, :update, :destroy]
   resources :events, only: [:index, :show, :create, :update, :destroy]

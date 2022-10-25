@@ -1,14 +1,33 @@
 import React, { useState } from "react";
 
-function ServicesForm() {
+function ServicesForm({ setShowService }) {
     const [title, setTitle] = useState("");
     const [location, setLocation] = useState("");
     const [description, setDescription] = useState("");
     const [image, setImage] = useState("");
+    const [errors, setErrors] = useState([]);
 
     function handleSubmit(e) {
         e.preventDefault();
         console.log(title, location, description, image)
+        fetch("/services", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                title: title,
+                location: location,
+                description: description,
+                image: image,
+            }),
+        }).then((r) => {
+            if(r.ok){
+                setShowService(false);
+            }else{
+                r.json().then((err) => setErrors(err.errors));
+            }
+        });
     }
 
     return(
