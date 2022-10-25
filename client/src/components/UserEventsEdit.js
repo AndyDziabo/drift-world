@@ -1,35 +1,36 @@
 import React, { useState } from "react";
 
-function UserAdEdit({ currentAd,  setToggleAdEdit  }) {
-    const [title, setTitle] = useState(currentAd.title);
-    const [price, setPrice] = useState(currentAd.price);
-    const [location, setLocation] = useState(currentAd.location);
-    const [description, setDescription] = useState(currentAd.description);
-    const [image, setImage] = useState(currentAd.image);
-    const [category, setCategory] = useState(currentAd.category);
+function UserEventsEdit({ currentEvent, setToggleEventEdit }) {
+    const [name, setName] = useState(currentEvent.name);
+    const [date, setDate] = useState(currentEvent.date);
+    const [location, setLocation] = useState(currentEvent.location);
+    const [entryFee, setEntryFee] = useState(currentEvent.entry_fee);
+    const [description, setDescription] = useState(currentEvent.description);
+    const [image, setImage] = useState(currentEvent.image);
     const [errors, setErrors] = useState([]);
     const [toggleSuccess, setToggleSuccess] = useState(false);
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch(`/classifieds/${currentAd.id}`, {
-            method: 'PATCH',
+        console.log(name, date, location, entryFee, description, image)
+        fetch(`/events/${currentEvent.id}`, {
+            method: "PATCH",
             headers: {
-                'Content-Type': 'application/json',
+                "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                title: title,
-                price: price,
+                name: name,
+                date: date,
                 location: location,
+                entry_fee: entryFee,
                 description: description,
                 image: image,
-                category: category,
             }),
         }).then((r) => {
             if(r.ok){
                 setToggleSuccess(true);
                 setTimeout(function(){
-                    setToggleAdEdit(false);
+                    setToggleEventEdit(false);
                 },2400);
             }else{
                 r.json().then((err) => setErrors(err.errors));
@@ -37,59 +38,42 @@ function UserAdEdit({ currentAd,  setToggleAdEdit  }) {
         });
     }
 
-    function handleVehicle() {
-        setCategory(true);
-    }
-
-    function handleParts() {
-        setCategory(false);
-    }
-
     function handleCancel() {
-        setToggleAdEdit(false);
+        setToggleEventEdit(false);
     }
 
     return(
         <div>
-            Edit Classifieds Form <button onClick={handleCancel}>Cancel</button>
+            Edit Events Form  <button onClick={handleCancel}>Cancel</button>
             {toggleSuccess ? "success" 
             : 
             <form onSubmit={handleSubmit}>
                 <table>
                     <tr>
                         <td>
-                            <label>Ad Type</label>
-                        </td>
-                        <td>
-                            <label><input type="radio" value="true" checked={category} onChange={handleVehicle} />Vehicle</label>
-                            <label><input type="radio" value="false" checked={!category} onChange={handleParts} />Parts</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label htmlFor="title">Title</label>
+                            <label htmlFor="name">Name</label>
                         </td>
                         <td>
                             <input
                                 type="text"
-                                id="title"
+                                id="name"
                                 autoComplete="off"
-                                value={title}
-                                onChange={(e) => setTitle(e.target.value)}
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
                             />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label htmlFor="price">Price</label>
+                            <label htmlFor="date">Date</label>
                         </td>
                         <td>
                             <input
                                 type="text"
-                                id="price"
+                                id="date"
                                 autoComplete="off"
-                                value={price}
-                                onChange={(e) => setPrice(e.target.value)}
+                                value={date}
+                                onChange={(e) => setDate(e.target.value)}
                             />
                         </td>
                     </tr>
@@ -104,6 +88,20 @@ function UserAdEdit({ currentAd,  setToggleAdEdit  }) {
                                 autoComplete="off"
                                 value={location}
                                 onChange={(e) => setLocation(e.target.value)}
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label htmlFor="entryFee">EntryFee</label>
+                        </td>
+                        <td>
+                            <input
+                                type="text"
+                                id="entryFee"
+                                autoComplete="off"
+                                value={entryFee}
+                                onChange={(e) => setEntryFee(e.target.value)}
                             />
                         </td>
                     </tr>
@@ -139,9 +137,7 @@ function UserAdEdit({ currentAd,  setToggleAdEdit  }) {
                     <tr>
                         <td></td>
                         <td>
-                            <td>
-                                <input type="submit" value="Submit" />
-                            </td>
+                            <input type="submit" value="Submit" />
                         </td>
                     </tr>
                 </table>
@@ -150,4 +146,5 @@ function UserAdEdit({ currentAd,  setToggleAdEdit  }) {
         </div>
     )
 }
-export default UserAdEdit;
+
+export default UserEventsEdit;

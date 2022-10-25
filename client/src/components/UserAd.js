@@ -1,5 +1,5 @@
 
-function UserAd({ ad, onAdDelete, setCurrentAd, setToggleAdEdit }) {
+function UserAd({ ad, onAdDelete, setCurrentAd, setToggleAdEdit, setToggleEventEdit, setToggleServiceEdit, setToggleHotdogEdit }) {
 
     function handleDelete() {
         fetch(`/classifieds/${ad.id}`, {
@@ -17,6 +17,9 @@ function UserAd({ ad, onAdDelete, setCurrentAd, setToggleAdEdit }) {
     function handleEdit() {
         setCurrentAd(ad);
         setToggleAdEdit(true);
+        setToggleEventEdit(false);
+        setToggleServiceEdit(false);
+        setToggleHotdogEdit(false);
     }
 
     return(

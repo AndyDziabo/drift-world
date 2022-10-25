@@ -2,8 +2,11 @@ import { useEffect, useState } from "react";
 import UserAd from "./UserAd";
 import UserAdEdit from "./UserAdEdit";
 import UserEvents from "./UserEvents";
+import UserEventsEdit from "./UserEventsEdit";
 import UserHotdogs from "./UserHotdogs";
+import UserHotdogsEdit from "./UserHotdogsEdit";
 import UserServices from "./UserServices";
+import UserServicesEdit from "./UserServicesEdit";
 
 function User() {
     const [ads, setAds] = useState([]);
@@ -12,6 +15,12 @@ function User() {
     const [hotdogs, setHotdogs] = useState([]);
     const [toggleAdEdit, setToggleAdEdit] = useState(false);
     const [currentAd, setCurrentAd] = useState();
+    const [toggleEventEdit, setToggleEventEdit] = useState(false);
+    const [currentEvent, setCurrentEvent] = useState();
+    const [toggleServiceEdit, setToggleServiceEdit] = useState(false);
+    const [currentService, setCurrentService] = useState();
+    const [toggleHotdogEdit, setToggleHotdogEdit] = useState(false);
+    const [currentHotdog, setCurrentHotdog] = useState();
 
     useEffect(() => {
         fetch("/user_ads")
@@ -61,25 +70,28 @@ function User() {
                 <div>
                     events
                     <ul>
-                        {events.map((event) => (<UserEvents key={event.id} event={event} onEventDelete={handleEventDelete} />))}
+                        {events.map((event) => (<UserEvents key={event.id} event={event} onEventDelete={handleEventDelete} setCurrentEvent={setCurrentEvent} setToggleEventEdit={setToggleEventEdit} />))}
                     </ul>
                 </div>
                 <div>
                     services
                     <ul>
-                        {services.map((service) => (<UserServices key={service.id} service={service} onServiceDelete={handleServiceDelete} />))}
+                        {services.map((service) => (<UserServices key={service.id} service={service} onServiceDelete={handleServiceDelete} setCurrentService={setCurrentService} setToggleServiceEdit={setToggleServiceEdit} />))}
                     </ul>
                 </div>
                 <div>
                     hotdog
                     <ul>
-                        {hotdogs.map((hotdog) => (<UserHotdogs key={hotdog.id} hotdog={hotdog} onHotdogDelete={handleHotdogDelete} />))}
+                        {hotdogs.map((hotdog) => (<UserHotdogs key={hotdog.id} hotdog={hotdog} onHotdogDelete={handleHotdogDelete} setCurrentHotdog={setCurrentHotdog} setToggleHotdogEdit={setToggleHotdogEdit} />))}
                     </ul>
                 </div>
                 
             </div>
             <div className="user-edit">
                 {toggleAdEdit ? <UserAdEdit currentAd={currentAd} setToggleAdEdit={setToggleAdEdit} /> : null}
+                {toggleEventEdit ? <UserEventsEdit currentEvent={currentEvent} setToggleEventEdit={setToggleEventEdit} /> : null}
+                {toggleServiceEdit ? <UserServicesEdit currentService={currentService} setToggleServiceEdit={setToggleServiceEdit} /> : null}
+                {toggleHotdogEdit ? <UserHotdogsEdit currentHotdog={currentHotdog} setToggleHotdogEdit={setToggleHotdogEdit} /> : null}
             </div>
         </div>
     )

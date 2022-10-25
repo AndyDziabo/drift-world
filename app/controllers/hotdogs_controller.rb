@@ -9,6 +9,12 @@ class HotdogsController < ApplicationController
         render json: hotdog, status: :created
     end
 
+    def update
+        hotdog = Hotdog.find(params[:id])
+        hotdog.update(hotdogs_params)
+        render json: hotdog, status: :accepted
+    end
+
     def destroy
         hotdog = Hotdog.find(params[:id])
         hotdog.destroy

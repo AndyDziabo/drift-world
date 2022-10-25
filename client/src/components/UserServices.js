@@ -1,5 +1,5 @@
 
-function UserServices({ service, onServiceDelete }) {
+function UserServices({ service, onServiceDelete, setCurrentService, setToggleServiceEdit }) {
 
     function handleDelete() {
         fetch(`/services/${service.id}`, {
@@ -14,9 +14,14 @@ function UserServices({ service, onServiceDelete }) {
          })
     }
 
+    function handleEdit() {
+        setCurrentService(service);
+        setToggleServiceEdit(true);
+    }
+
     return(
         <li>
-            {service.title} <button>edit</button> <button onClick={handleDelete}>delete</button>
+            {service.title} <button onClick={handleEdit}>edit</button> <button onClick={handleDelete}>delete</button>
         </li>
     )
 }

@@ -1,35 +1,29 @@
 import React, { useState } from "react";
 
-function UserAdEdit({ currentAd,  setToggleAdEdit  }) {
-    const [title, setTitle] = useState(currentAd.title);
-    const [price, setPrice] = useState(currentAd.price);
-    const [location, setLocation] = useState(currentAd.location);
-    const [description, setDescription] = useState(currentAd.description);
-    const [image, setImage] = useState(currentAd.image);
-    const [category, setCategory] = useState(currentAd.category);
+function UserHotdogsEdit({ currentHotdog, setToggleHotdogEdit }) {
+    const [title, setTitle] = useState(currentHotdog.title);
+    const [description, setDescription] = useState(currentHotdog.description);
+    const [image, setImage] = useState(currentHotdog.image);
     const [errors, setErrors] = useState([]);
     const [toggleSuccess, setToggleSuccess] = useState(false);
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch(`/classifieds/${currentAd.id}`, {
-            method: 'PATCH',
+        fetch(`/hotdogs/${currentHotdog.id}`, {
+            method: "PATCH",
             headers: {
-                'Content-Type': 'application/json',
+                "Content-Type": "application/json",
             },
             body: JSON.stringify({
                 title: title,
-                price: price,
-                location: location,
                 description: description,
                 image: image,
-                category: category,
             }),
         }).then((r) => {
             if(r.ok){
                 setToggleSuccess(true);
                 setTimeout(function(){
-                    setToggleAdEdit(false);
+                    setToggleHotdogEdit(false);
                 },2400);
             }else{
                 r.json().then((err) => setErrors(err.errors));
@@ -37,34 +31,17 @@ function UserAdEdit({ currentAd,  setToggleAdEdit  }) {
         });
     }
 
-    function handleVehicle() {
-        setCategory(true);
-    }
-
-    function handleParts() {
-        setCategory(false);
-    }
-
     function handleCancel() {
-        setToggleAdEdit(false);
+        setToggleHotdogEdit(false);
     }
 
     return(
         <div>
-            Edit Classifieds Form <button onClick={handleCancel}>Cancel</button>
+            Edit Hotdog Form <button onClick={handleCancel}>Cancel</button>
             {toggleSuccess ? "success" 
             : 
             <form onSubmit={handleSubmit}>
                 <table>
-                    <tr>
-                        <td>
-                            <label>Ad Type</label>
-                        </td>
-                        <td>
-                            <label><input type="radio" value="true" checked={category} onChange={handleVehicle} />Vehicle</label>
-                            <label><input type="radio" value="false" checked={!category} onChange={handleParts} />Parts</label>
-                        </td>
-                    </tr>
                     <tr>
                         <td>
                             <label htmlFor="title">Title</label>
@@ -76,34 +53,6 @@ function UserAdEdit({ currentAd,  setToggleAdEdit  }) {
                                 autoComplete="off"
                                 value={title}
                                 onChange={(e) => setTitle(e.target.value)}
-                            />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label htmlFor="price">Price</label>
-                        </td>
-                        <td>
-                            <input
-                                type="text"
-                                id="price"
-                                autoComplete="off"
-                                value={price}
-                                onChange={(e) => setPrice(e.target.value)}
-                            />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label htmlFor="location">Location</label>
-                        </td>
-                        <td>
-                            <input
-                                type="text"
-                                id="location"
-                                autoComplete="off"
-                                value={location}
-                                onChange={(e) => setLocation(e.target.value)}
                             />
                         </td>
                     </tr>
@@ -139,9 +88,7 @@ function UserAdEdit({ currentAd,  setToggleAdEdit  }) {
                     <tr>
                         <td></td>
                         <td>
-                            <td>
-                                <input type="submit" value="Submit" />
-                            </td>
+                            <input type="submit" value="Submit" />
                         </td>
                     </tr>
                 </table>
@@ -150,4 +97,5 @@ function UserAdEdit({ currentAd,  setToggleAdEdit  }) {
         </div>
     )
 }
-export default UserAdEdit;
+
+export default UserHotdogsEdit;

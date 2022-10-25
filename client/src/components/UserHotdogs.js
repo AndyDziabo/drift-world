@@ -1,5 +1,5 @@
 
-function UserHotdogs({ hotdog, onHotdogDelete }) {
+function UserHotdogs({ hotdog, onHotdogDelete, setCurrentHotdog, setToggleHotdogEdit }) {
 
     function handleDelete() {
         fetch(`/hotdogs/${hotdog.id}`, {
@@ -14,9 +14,14 @@ function UserHotdogs({ hotdog, onHotdogDelete }) {
          })
     }
 
+    function handleEdit() {
+        setCurrentHotdog(hotdog);
+        setToggleHotdogEdit(true);
+    }
+
     return(
         <li>
-            {hotdog.title} <button>edit</button> <button onClick={handleDelete}>delete</button>
+            {hotdog.title} <button onClick={handleEdit}>edit</button> <button onClick={handleDelete}>delete</button>
         </li>
     )
 }

@@ -1,5 +1,5 @@
 
-function UserEvents({ event, onEventDelete }) {
+function UserEvents({ event, onEventDelete, setCurrentEvent, setToggleEventEdit }) {
 
     function handleDelete() {
         fetch(`/events/${event.id}`, {
@@ -14,9 +14,14 @@ function UserEvents({ event, onEventDelete }) {
          })
     }
 
+    function handleEdit() {
+        setCurrentEvent(event);
+        setToggleEventEdit(true);
+    }
+
     return(
         <li>
-            {event.name} <button>edit</button> <button onClick={handleDelete}>delete</button>
+            {event.name} <button onClick={handleEdit}>edit</button> <button onClick={handleDelete}>delete</button>
         </li>
     )
 }

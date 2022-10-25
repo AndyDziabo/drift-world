@@ -9,6 +9,12 @@ class EventsController < ApplicationController
         render json: event, status: :created
     end
 
+    def update
+        event = Event.find(params[:id])
+        event.update(events_params)
+        render json: event, status: :accepted
+    end
+
     def destroy
         event = Event.find(params[:id])
         event.destroy
