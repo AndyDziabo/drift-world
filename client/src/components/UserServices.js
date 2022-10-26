@@ -1,5 +1,5 @@
 
-function UserServices({ service, onServiceDelete, setCurrentService, setToggleServiceEdit }) {
+function UserServices({ service, onServiceDelete, setCurrentService, setToggleAdEdit, setToggleEventEdit, setToggleServiceEdit, setToggleHotdogEdit }) {
 
     function handleDelete() {
         fetch(`/services/${service.id}`, {
@@ -7,7 +7,8 @@ function UserServices({ service, onServiceDelete, setCurrentService, setToggleSe
         })
          .then(res => {
             if(res.ok){
-                onServiceDelete(service.id)
+                onServiceDelete(service.id);
+                setToggleServiceEdit(false);
             }else{
                 res.json().then(console.log)
             }
@@ -16,7 +17,10 @@ function UserServices({ service, onServiceDelete, setCurrentService, setToggleSe
 
     function handleEdit() {
         setCurrentService(service);
+        setToggleAdEdit(false);
+        setToggleEventEdit(false);
         setToggleServiceEdit(true);
+        setToggleHotdogEdit(false);
     }
 
     return(

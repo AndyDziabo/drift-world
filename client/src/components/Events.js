@@ -7,7 +7,6 @@ function Events(){
     
     function handleClick() {
         setShowEvent(!showEvent);
-        console.log(showEvent)
     }
       
     return (

@@ -1,5 +1,5 @@
 
-function UserEvents({ event, onEventDelete, setCurrentEvent, setToggleEventEdit }) {
+function UserEvents({ event, onEventDelete, setCurrentEvent, setToggleAdEdit, setToggleEventEdit, setToggleServiceEdit, setToggleHotdogEdit }) {
 
     function handleDelete() {
         fetch(`/events/${event.id}`, {
@@ -7,7 +7,8 @@ function UserEvents({ event, onEventDelete, setCurrentEvent, setToggleEventEdit 
         })
          .then(res => {
             if(res.ok){
-                onEventDelete(event.id)
+                onEventDelete(event.id);
+                setToggleEventEdit(false);
             }else{
                 res.json().then(console.log)
             }
@@ -16,7 +17,10 @@ function UserEvents({ event, onEventDelete, setCurrentEvent, setToggleEventEdit 
 
     function handleEdit() {
         setCurrentEvent(event);
+        setToggleAdEdit(false);
         setToggleEventEdit(true);
+        setToggleServiceEdit(false);
+        setToggleHotdogEdit(false);
     }
 
     return(

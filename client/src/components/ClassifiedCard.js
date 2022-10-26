@@ -29,21 +29,21 @@ function ClassifiedCard({ classified, setToggle }) {
             }),
         }).then((r) => {
             if(r.ok){
-                r.json().then((com) => setComments(...comments, com));
+                r.json().then((com) => setComments([...comments, com]));
             }else{
                 r.json().then((err) => setErrors(err.errors));
             }
         });
     }
 
-    console.log(errors)
+
     return(
         <li>
             <div className="ad-top">
                 <div className="ad-title">
                     <h2>{classified.title}</h2>
-                    <div>$ {classified.price}</div>
-                    <div>{classified.location}</div>
+                    <div>Price: ${classified.price}</div>
+                    <div>Location: {classified.location}</div>
                 </div>
                 <div className="ad-btn">
                     posted by: {classified.user.name}
@@ -55,6 +55,7 @@ function ClassifiedCard({ classified, setToggle }) {
                     <img src={classified.image} />
                 </div>
                 <div className="ad-description">
+                    <div>Description:</div>
                     {classified.description}
                 </div>
             </div>

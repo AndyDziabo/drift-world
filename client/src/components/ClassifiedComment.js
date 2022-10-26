@@ -1,6 +1,6 @@
 
 function ClassifiedComments({ comment }) {
-console.log(comment)
+
     return(
         <li>
             <div>
@@ -8,7 +8,7 @@ console.log(comment)
                     {comment.comment}
                 </div>
                 <div>
-                    {comment.user.name}
+                    posted by: {comment.user.name}
                 </div>
             </div>
             

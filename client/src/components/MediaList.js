@@ -9,7 +9,7 @@ function MediaList() {
             .then((r) => r.json())
             .then(setMedia);
     }, []);
-    console.log(media)
+
 
     return(
         <div>

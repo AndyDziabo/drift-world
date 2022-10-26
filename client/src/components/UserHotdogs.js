@@ -1,5 +1,5 @@
 
-function UserHotdogs({ hotdog, onHotdogDelete, setCurrentHotdog, setToggleHotdogEdit }) {
+function UserHotdogs({ hotdog, onHotdogDelete, setCurrentHotdog, setToggleAdEdit, setToggleEventEdit, setToggleServiceEdit, setToggleHotdogEdit }) {
 
     function handleDelete() {
         fetch(`/hotdogs/${hotdog.id}`, {
@@ -7,7 +7,8 @@ function UserHotdogs({ hotdog, onHotdogDelete, setCurrentHotdog, setToggleHotdog
         })
          .then(res => {
             if(res.ok){
-                onHotdogDelete(hotdog.id)
+                onHotdogDelete(hotdog.id);
+                setToggleHotdogEdit(false);
             }else{
                 res.json().then(console.log)
             }
@@ -16,6 +17,9 @@ function UserHotdogs({ hotdog, onHotdogDelete, setCurrentHotdog, setToggleHotdog
 
     function handleEdit() {
         setCurrentHotdog(hotdog);
+        setToggleAdEdit(false);
+        setToggleEventEdit(false);
+        setToggleServiceEdit(false);
         setToggleHotdogEdit(true);
     }
 

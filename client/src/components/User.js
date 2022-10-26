@@ -64,25 +64,69 @@ function User() {
                 <div>
                     ads
                     <ul>
-                        {ads.map((ad) => (<UserAd key={ad.id} ad={ad} onAdDelete={handleAdDelete} setCurrentAd={setCurrentAd} setToggleAdEdit={setToggleAdEdit} />))}
+                        {ads.map((ad) => (
+                            <UserAd 
+                                key={ad.id} 
+                                ad={ad} 
+                                onAdDelete={handleAdDelete} 
+                                setCurrentAd={setCurrentAd} 
+                                setToggleAdEdit={setToggleAdEdit}
+                                setToggleEventEdit={setToggleEventEdit}
+                                setToggleServiceEdit={setToggleServiceEdit}
+                                setToggleHotdogEdit={setToggleHotdogEdit} 
+                            />
+                        ))}
                     </ul>
                 </div>
                 <div>
                     events
                     <ul>
-                        {events.map((event) => (<UserEvents key={event.id} event={event} onEventDelete={handleEventDelete} setCurrentEvent={setCurrentEvent} setToggleEventEdit={setToggleEventEdit} />))}
+                        {events.map((event) => (
+                            <UserEvents 
+                                key={event.id} 
+                                event={event} 
+                                onEventDelete={handleEventDelete} 
+                                setCurrentEvent={setCurrentEvent} 
+                                setToggleAdEdit={setToggleAdEdit}
+                                setToggleEventEdit={setToggleEventEdit}
+                                setToggleServiceEdit={setToggleServiceEdit}
+                                setToggleHotdogEdit={setToggleHotdogEdit} 
+                            />
+                        ))}
                     </ul>
                 </div>
                 <div>
                     services
                     <ul>
-                        {services.map((service) => (<UserServices key={service.id} service={service} onServiceDelete={handleServiceDelete} setCurrentService={setCurrentService} setToggleServiceEdit={setToggleServiceEdit} />))}
+                        {services.map((service) => (
+                            <UserServices 
+                                key={service.id} 
+                                service={service} 
+                                onServiceDelete={handleServiceDelete} 
+                                setCurrentService={setCurrentService} 
+                                setToggleAdEdit={setToggleAdEdit}
+                                setToggleEventEdit={setToggleEventEdit}
+                                setToggleServiceEdit={setToggleServiceEdit}
+                                setToggleHotdogEdit={setToggleHotdogEdit} 
+                            />
+                        ))}
                     </ul>
                 </div>
                 <div>
                     hotdog
                     <ul>
-                        {hotdogs.map((hotdog) => (<UserHotdogs key={hotdog.id} hotdog={hotdog} onHotdogDelete={handleHotdogDelete} setCurrentHotdog={setCurrentHotdog} setToggleHotdogEdit={setToggleHotdogEdit} />))}
+                        {hotdogs.map((hotdog) => (
+                            <UserHotdogs 
+                                key={hotdog.id} 
+                                hotdog={hotdog} 
+                                onHotdogDelete={handleHotdogDelete} 
+                                setCurrentHotdog={setCurrentHotdog} 
+                                setToggleAdEdit={setToggleAdEdit}
+                                setToggleEventEdit={setToggleEventEdit}
+                                setToggleServiceEdit={setToggleServiceEdit}
+                                setToggleHotdogEdit={setToggleHotdogEdit} 
+                            />
+                        ))}
                     </ul>
                 </div>
                 

@@ -7,7 +7,6 @@ function Media(){
     
     function handleClick() {
         setShowMedia(!showMedia);
-        console.log(showMedia)
     }
       
     return (

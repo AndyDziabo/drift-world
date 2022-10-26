@@ -24,7 +24,6 @@ function App() {
 
   if (!user) return <Login onLogin={setUser} />;
 
-console.log(user)
   return (
     <div>
       <NavBar user={user} setUser={setUser} />

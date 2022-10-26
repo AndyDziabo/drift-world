@@ -13,8 +13,8 @@ function ClassifiedThumb({ classified, setToggle, setAd }) {
                 </div>
                 <div className="thumb-info">
                     <h3>{classified.title}</h3>
-                    <div>{classified.price}</div>
-                    <div>{classified.location}</div>
+                    <div>Price: ${classified.price}</div>
+                    <div>Location: {classified.location}</div>
                 </div>
             </div>
         </li>

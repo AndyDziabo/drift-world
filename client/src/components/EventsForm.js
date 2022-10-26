@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import DateTimePicker from 'react-datetime-picker';
 
 function EventsForm({ setShowEvent }) {
     const [name, setName] = useState("");
@@ -34,9 +35,14 @@ function EventsForm({ setShowEvent }) {
         });
     }
 
+
     return(
         <div>
             Events Form {errors ? errors : null}
+            <div>
+                <label htmlFor="date">Date</label><DateTimePicker onChange={setDate} value={date} />
+            </div>
+            
             <form onSubmit={handleSubmit}>
                 <table>
                     <tr>
@@ -50,20 +56,6 @@ function EventsForm({ setShowEvent }) {
                                 autoComplete="off"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
-                            />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label htmlFor="date">Date</label>
-                        </td>
-                        <td>
-                            <input
-                                type="text"
-                                id="date"
-                                autoComplete="off"
-                                value={date}
-                                onChange={(e) => setDate(e.target.value)}
                             />
                         </td>
                     </tr>

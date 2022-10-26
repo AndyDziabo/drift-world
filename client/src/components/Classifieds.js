@@ -7,7 +7,6 @@ function Classifieds({ user }){
     
     function handleClick() {
         setShowAd(!showAd);
-        console.log(showAd)
     }
       
     return (

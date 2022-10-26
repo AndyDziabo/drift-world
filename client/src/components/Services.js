@@ -8,7 +8,6 @@ function Services(){
     
     function handleClick() {
         setShowService(!showService);
-        console.log(showService)
     }
       
     return (

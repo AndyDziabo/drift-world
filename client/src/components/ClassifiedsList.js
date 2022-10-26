@@ -18,7 +18,6 @@ function ClassifiedsList() {
     }, []);
 
     function handleSelect(e) {
-        console.log(e.target.value)
         if(e.target.value === "all"){
             setSelectedAds(classifieds)
         }else if(e.target.value === "vehicles"){

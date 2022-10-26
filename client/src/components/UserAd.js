@@ -7,7 +7,8 @@ function UserAd({ ad, onAdDelete, setCurrentAd, setToggleAdEdit, setToggleEventE
         })
          .then(res => {
             if(res.ok){
-                onAdDelete(ad.id)
+                onAdDelete(ad.id);
+                setToggleAdEdit(false);
             }else{
                 res.json().then(console.log)
             }

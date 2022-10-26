@@ -10,7 +10,6 @@ function ClassifiedsForm({ setShowAd, user }) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(title, price, location, description, image, e.target.category.value)
         fetch("/classifieds", {
             method: "POST",
             headers: {
@@ -32,7 +31,7 @@ function ClassifiedsForm({ setShowAd, user }) {
             }
         });
     }
-console.log(errors)
+
     return(
         <div>
             Classifieds Form

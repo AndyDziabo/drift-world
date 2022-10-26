@@ -17,26 +17,6 @@ function NavBar({ user, setUser }) {
             {user ? user.name : "please login"}
           </NavLink>
         </span>
-        {/* <span>
-        <NavLink to="/" exact>
-          Home
-        </NavLink>
-        </span>
-        <span>
-        <NavLink to="/login" exact>
-          Login
-        </NavLink>
-        </span>
-        <span>
-        <NavLink to="/draft" exact>
-          Draft
-        </NavLink>
-        </span>
-        <span>
-        <NavLink to="/about" exact>
-          About
-        </NavLink>
-        </span> */}
         <button onClick={handleLogoutClick}>Logout</button>
       </div>
     );
