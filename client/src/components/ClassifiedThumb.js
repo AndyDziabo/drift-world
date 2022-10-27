@@ -1,3 +1,4 @@
+import "./ClassifiedStyle/classified.css"
 
 function ClassifiedThumb({ classified, setToggle, setAd }) {
 
@@ -6,7 +7,7 @@ function ClassifiedThumb({ classified, setToggle, setAd }) {
         setToggle(false);
     }
     return(
-        <li>
+        <li className="ads-list-thumbs">
             <div className="thumb-main">
                 <div className="thumb-image" onClick={handleClick}>
                     <img src={classified.image} />

@@ -1,0 +1,79 @@
+.main-hotdog {
+  width: 100%;
+}
+  
+.title {
+  background-color: aliceblue;
+  border-style: solid;
+  border-color: rgb(24, 130, 191);
+  border-radius: 15px;
+  margin: 30px 20px 60px 20px;
+  padding: 10px 30px 10px 30px;
+}
+    
+.title h2 {
+  display: inline;
+}
+    
+.title button {
+  float: right;
+}
+    
+.hotdogs {
+  background-color: aliceblue;
+  border-style: solid;
+  border-color: rgb(24, 130, 191);
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.main-hotdogs-list ul {
+  list-style-type: none;
+}
+      
+.hotdog-type {
+  margin: 0px 10px ;
+}
+      
+.hotdogs-list-ul {
+  background-color: rgb(192, 208, 222);
+  border-style: solid;
+  border-color: rgb(150, 167, 176);
+  border-radius: 15px;
+}
+  
+.hotdog-li {
+  margin-top: 20px;
+  border-style: solid;
+  border-color: rgb(150, 167, 176);
+  border-width: 0px 0px 2px 0px;
+  margin-right: 40px;
+}
+  
+.hotdog-li h2 {
+  display: inline;
+}
+
+.posted-by {
+    margin-left: 20px;
+}
+
+.hotdog-description {
+  background-color: antiquewhite;
+  width: 50%;
+  padding: 10px;
+  border-radius: 15px;
+  margin: 20px 0px 20px 0px;
+}
+    
+.hotdog-description-title {
+  margin-bottom: 10px;
+}
+    
+.form-title{
+  margin: 0px 0px 20px 10px;
+}
+  
+.form {
+  margin: 0px 0px 20px 50px;
+}

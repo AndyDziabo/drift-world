@@ -1,4 +1,8 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { TbArrowBigDownLines } from 'react-icons/tb';
+import "./NavBarStyle/navbar.css"
+import User from "./User";
 
 function NavBar({ user, setUser }) {
 
@@ -9,17 +13,54 @@ function NavBar({ user, setUser }) {
         }
       });
     }
+
+
+
+    const [open, setOpen] = useState(false);
+
+    const handleOpen = () => {
+      setOpen(!open);
+    };
+  
+    const handleMenuOne = () => {
+      setOpen(false);
+    };
   
     return (
-      <div className="nav">
-        <span>
-          <NavLink to="/user" exact>
-            {user ? user.name : "please login"}
-          </NavLink>
-        </span>
-        <button onClick={handleLogoutClick}>Logout</button>
+      <div className="nav-main">
+        <div className="dropdown">
+          <button onClick={handleOpen}>Welcome, {user.name} <TbArrowBigDownLines /></button>
+          {open ? (
+            <ul className="menu">
+              <li className="menu-item">
+                <NavLink onClick={handleMenuOne} to="/user" exact>
+                  Account
+                </NavLink>
+              </li>
+              <li className="menu-item">
+                <button onClick={handleLogoutClick}>Logout</button>
+              </li>
+            </ul>
+          ) : null}
+        </div>
       </div>
     );
   }
+
+
+
+  
+  //   return (
+  //     <div className="nav">
+  //       <span>
+  //         <span>Welcome, </span> 
+  //         <NavLink to="/user" exact>
+  //           {user ? user.name : "please login"}
+  //         </NavLink>
+  //       </span>
+  //       <button onClick={handleLogoutClick}>Logout</button>
+  //     </div>
+  //   );
+  // }
   
   export default NavBar;

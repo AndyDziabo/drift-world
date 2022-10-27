@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MediaForm from './MediaForm';
 import MediaList from "./MediaList";
+import "./HotdogStyle/hotdog.css";
 
 function Media(){
     const [showMedia, setShowMedia] = useState(false);
@@ -10,12 +11,12 @@ function Media(){
     }
       
     return (
-        <div>
-            <div>
-                Media
-                <button onClick={handleClick}>{showMedia ? "Show all Ads" : "Create new Ad"}</button>
+        <div className="main-hotdog">
+            <div className="title">
+                <h2>Media</h2>
+                <button onClick={handleClick}>{showMedia ? "Show Hotdogs" : "Create Hotdog"}</button>
             </div>
-            <div>
+            <div className="hotdogs">
             {showMedia ? (
                 <>
                 <MediaForm setShowMedia={setShowMedia} />

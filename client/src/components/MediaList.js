@@ -12,9 +12,12 @@ function MediaList() {
 
 
     return(
-        <div>
-            Media List
-            <ul>
+        <div className="main-hotdogs-list">
+            <div className="hotdog-type">
+                Media List
+            </div>
+            
+            <ul className="hotdogs-list-ul">
                 {media.map((m) => (
                     <MediaCard key={m.id} m={m} />
                 ))}

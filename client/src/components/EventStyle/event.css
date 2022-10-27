@@ -1,0 +1,105 @@
+.main-event {
+    width: 100%;
+}
+
+.title {
+  background-color: aliceblue;
+  border-style: solid;
+  border-color: rgb(24, 130, 191);
+  border-radius: 15px;
+  margin: 30px 20px 60px 20px;
+  padding: 10px 30px 10px 30px;
+}
+  
+.title h2 {
+  display: inline;
+}
+  
+.title button {
+  float: right;
+}
+  
+.events {
+  background-color: aliceblue;
+  border-style: solid;
+  border-color: rgb(24, 130, 191);
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.main-events-list ul {
+  list-style-type: none;
+}
+  
+.event-type {
+  margin: 0px 10px ;
+}
+  
+.events-list-ul {
+  background-color: rgb(192, 208, 222);
+  border-style: solid;
+  border-color: rgb(150, 167, 176);
+  border-radius: 15px;
+}
+
+.event-li {
+  margin-top: 20px;
+  border-style: solid;
+  border-color: rgb(150, 167, 176);
+  border-width: 0px 0px 2px 0px;
+  margin-right: 40px;
+
+}
+
+.event-li img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  width: 900px;
+  border-radius: 15px;
+}
+
+.event-li h2 {
+  display: inline;
+}
+
+.event-specs {
+  max-width: 70%;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.event-info {
+  margin-left: 20px;
+}
+
+.event-description {
+  background-color: antiquewhite;
+  width: 70%;
+  padding: 10px;
+  border-radius: 15px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.event-description-title {
+  margin-bottom: 10px;
+}
+
+.form-title{
+  margin: 0px 0px 20px 10px;
+}
+
+.date-picker {
+  margin: 0px 0px 0px 50px;
+}
+
+.date-picker label {
+  margin-right: 55px;
+}
+  
+.form {
+  margin: 0px 0px 20px 50px;
+}

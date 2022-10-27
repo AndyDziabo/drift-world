@@ -4,9 +4,11 @@ import logo from '../images/driftLogo.png';
 function Logo(){
     return(
         <div className="logo">
-            <NavLink to="/" exact>
-                <img alt="drift-world" src={logo} />
-            </NavLink>
+            <div>
+                <NavLink to="/" exact>
+                    <img alt="drift-world" src={logo} />
+                </NavLink>
+            </div>
         </div>
     )
 }

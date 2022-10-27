@@ -26,37 +26,50 @@ function LoginForm({ onLogin }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className="main-form">
+      <div className="table">
+        <form onSubmit={handleSubmit}>
+          <table>
+            <tr>
+              <td>
+                <label htmlFor="username">Username</label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="name"
+                  autoComplete="off"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label htmlFor="password">Password</label>
+              </td>
+              <td>
+                <input
+                  type="password"
+                  id="password"
+                  autoComplete="current-password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </td>
+            </tr>
+            {/* {errors.map((err) => (
+              <Error key={err}>{err}</Error>
+            ))} */}
 
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          id="name"
-          autoComplete="off"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          autoComplete="current-password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-
-        <button variant="fill" color="primary" type="submit">
-          {isLoading ? "Loading..." : "Login"}
-        </button>
-
-        {/* {errors.map((err) => (
-          <Error key={err}>{err}</Error>
-        ))} */}
-
-        {errors ? <h1>{errors}</h1> : null }
-
-    </form>
+            {errors ? <p>{errors}</p> : null }
+          </table>
+          <button type="submit">
+            {isLoading ? "Loading..." : "Login"}
+          </button>
+        </form>
+      </div>
+    </div>
   );
 }
 

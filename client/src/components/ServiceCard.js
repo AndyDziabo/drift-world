@@ -2,12 +2,21 @@
 function ServiceCard({ service }) {
 
     return(
-        <li>
+        <li className="service-li">
             <h2>{service.title}</h2>
-            <img src={service.image} />
-            <p>Location: {service.location}</p>
-            <p>Description: {service.description}</p>
-            <p>posted by: {service.user.name}</p>
+            <div className="service-info">
+                <div>Posted by: {service.user.name}</div>
+                <div>Location: {service.location}</div>
+            </div>   
+            <div>
+                <div className="service-image">
+                    <img src={service.image} />
+                </div>
+                <div className="service-description">
+                    <div className="service-description-title">Description: </div>
+                    {service.description}
+                </div>    
+            </div>         
         </li>
     )
 }

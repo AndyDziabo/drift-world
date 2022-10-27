@@ -11,9 +11,12 @@ function ServicesList() {
     }, []);
 
     return(
-        <div>
-            Services List
-            <ul>
+        <div className="main-services-list">
+            <div className="service-type">
+                Services List
+            </div>
+            
+            <ul className="services-list-ul">
                 {services.map((service) => (
                     <ServiceCard key={service.id} service={service} />
                 ))}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./ClassifiedStyle/classified.css"
 
 function ClassifiedsForm({ setShowAd, user }) {
     const [title, setTitle] = useState("");
@@ -34,8 +35,10 @@ function ClassifiedsForm({ setShowAd, user }) {
 
     return(
         <div>
-            Classifieds Form
-            <form onSubmit={handleSubmit}>
+            <div className="form-title">
+                Classifieds Form
+            </div>
+            <form className="form" onSubmit={handleSubmit}>
                 <table>
                     <tr>
                         <td>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ClassifiedCard from "./ClassifiedCard";
 import ClassifiedThumb from "./ClassifiedThumb";
+import "./ClassifiedStyle/classified.css"
 
 function ClassifiedsList() {
     const [classifieds, setClassifieds] = useState([]);
@@ -34,21 +35,28 @@ function ClassifiedsList() {
     }
 
     return(
-        <div>
-            ClassifiedsList
-            <select onChange={handleSelect}>
-                <option value="all">All Ads</option>
-                <option value="vehicles">Vehicles</option>
-                <option value="parts">Parts</option>
-            </select>
+        <div className="main-ads-list">
+            <div>
+                <div className="ad-type">
+                    Select Ad Type
+                </div>
+                <div>
+                    <select onChange={handleSelect}>
+                        <option value="all">All Ads</option>
+                        <option value="vehicles">Vehicles</option>
+                        <option value="parts">Parts</option>
+                    </select>
+                </div>
+            </div>
+            
             {toggle ?
-            <ul>
+            <ul className="ads-list-ul">
                 {selectedAds.map((classified) => (
                     <ClassifiedThumb key={classified.id} classified={classified} setToggle={setToggle} setAd={setAd} />
                 ))}
             </ul>
             :
-            <ul>
+            <ul className="ads-list-ul">
                 <ClassifiedCard classified={ad} setToggle={setToggle} />
             </ul>
             }

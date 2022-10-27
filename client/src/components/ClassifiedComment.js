@@ -1,14 +1,15 @@
+import "./ClassifiedStyle/classified.css"
 
 function ClassifiedComments({ comment }) {
 
     return(
         <li>
-            <div>
-                <div>
-                    {comment.comment}
+            <div className="comment-container">
+                <div className="posted-by">
+                    {comment.user.name}
                 </div>
-                <div>
-                    posted by: {comment.user.name}
+                <div className="content">
+                    {comment.comment}
                 </div>
             </div>
             

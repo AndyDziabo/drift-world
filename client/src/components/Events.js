@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import EventsForm from './EventsForm';
 import EventsList from "./EventsList";
+import "./EventStyle/event.css";
 
 function Events(){
     const [showEvent, setShowEvent] = useState(false);
@@ -10,12 +11,12 @@ function Events(){
     }
       
     return (
-        <div>
-            <div>
-                Events
-                <button onClick={handleClick}>{showEvent ? "Show all Ads" : "Create new Ad"}</button>
+        <div className="main-event">
+            <div className="title">
+                <h2>Events</h2>
+                <button onClick={handleClick}>{showEvent ? "Show Events" : "Create Event"}</button>
             </div>
-            <div>
+            <div className="events">
             {showEvent ? (
                 <>
                 <EventsForm setShowEvent={setShowEvent} />

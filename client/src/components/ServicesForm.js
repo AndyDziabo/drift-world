@@ -32,8 +32,11 @@ function ServicesForm({ setShowService }) {
 
     return(
         <div>
-            Services Form
-            <form onSubmit={handleSubmit}>
+            <div className="form-title">
+                Services Form
+            </div>
+            
+            <form className="form" onSubmit={handleSubmit}>
                 <table>
                     <tr>
                         <td>

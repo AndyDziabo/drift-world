@@ -30,8 +30,11 @@ function MediaForm({ setShowMedia }) {
 
     return(
         <div>
-            Media Form
-            <form onSubmit={handleSubmit}>
+            <div className="form-title">
+                Media Form
+            </div>
+            
+            <form className="form" onSubmit={handleSubmit}>
                 <table>
                     <tr>
                         <td>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ServicesForm from './ServicesForm';
 import ServicesList from "./ServicesList";
-
+import "./ServiceStyle/service.css";
 
 function Services(){
     const [showService, setShowService] = useState(false);
@@ -11,12 +11,12 @@ function Services(){
     }
       
     return (
-        <div>
-            <div>
-                Services
-                <button onClick={handleClick}>{showService ? "Show all Ads" : "Create new Ad"}</button>
+        <div className="main-service">
+            <div className="title">
+                <h2>Services</h2>
+                <button onClick={handleClick}>{showService ? "Show Services" : "Create Service"}</button>
             </div>
-            <div>
+            <div className="services">
             {showService ? (
                 <>
                 <ServicesForm setShowService={setShowService} />

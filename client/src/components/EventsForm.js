@@ -38,12 +38,15 @@ function EventsForm({ setShowEvent }) {
 
     return(
         <div>
-            Events Form {errors ? errors : null}
-            <div>
+            <div className="form-title">
+                Events Form
+            </div>
+            
+            <div className="date-picker">
                 <label htmlFor="date">Date</label><DateTimePicker onChange={setDate} value={date} />
             </div>
             
-            <form onSubmit={handleSubmit}>
+            <form className="form" onSubmit={handleSubmit}>
                 <table>
                     <tr>
                         <td>

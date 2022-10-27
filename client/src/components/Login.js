@@ -1,33 +1,38 @@
 import { useState } from "react";
 import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
+import "./LoginStyle/login.css"
 
 
 function Login({ onLogin }) {
   const [showLogin, setShowLogin] = useState(true);
 
   return (
-    <div>
+    <div className="main">
       <h1>Login</h1>
       {showLogin ? (
         <>
-          <LoginForm onLogin={onLogin} />
-          <p>
+          <div>
+            <LoginForm onLogin={onLogin} />
+          </div>
+          <div>
             Don't have an account? &nbsp;
             <button onClick={() => setShowLogin(false)}>
               Sign Up
             </button>
-          </p>
+          </div>
         </>
       ) : (
         <>
-          <SignUpForm onLogin={onLogin} />
-          <p>
+          <div>
+            <SignUpForm onLogin={onLogin} />
+          </div>
+          <div>
             Already have an account? &nbsp;
             <button onClick={() => setShowLogin(true)}>
               Log In
             </button>
-          </p>
+          </div>
         </>
       )}
     </div>

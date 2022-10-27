@@ -1,0 +1,29 @@
+body {
+   
+}
+
+.main {
+    margin: auto;
+    background-color: aliceblue;
+    border-style: solid;
+    border-color: rgb(24, 130, 191);
+    border-radius: 15px;
+    width: 30%;
+    text-align: center;
+    margin-top: 200px;
+    padding-bottom: 30px;
+}
+
+.main-form {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.table {
+    margin: auto;
+    width:70%;
+}
+
+.table td {
+    width: 150px;
+}

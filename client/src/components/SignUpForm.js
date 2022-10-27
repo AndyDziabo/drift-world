@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./LoginStyle/login.css"
 
 function SignUpForm({ onLogin }) {
   const [name, setName] = useState("");
@@ -34,54 +35,79 @@ function SignUpForm({ onLogin }) {
       }
     });
   }
-  console.log(errors)
 
   return (
-    <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          id="name"
-          autoComplete="off"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+    <div className="main-form">
+      <div className="table">
+        <form onSubmit={handleSubmit}>
+          <table>
+            <tr>
+              <td>
+                <label htmlFor="username">Username</label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="name"
+                  autoComplete="off"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label htmlFor="email">Email</label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="email"
+                  autoComplete="off"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label htmlFor="password">Password</label>
+              </td>
+              <td>
+                <input
+                  type="password"
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  autoComplete="current-password"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label htmlFor="password">Password Confirmation</label>
+              </td>
+              <td>
+                <input
+                  type="password"
+                  id="password_confirmation"
+                  value={passwordConfirmation}
+                  onChange={(e) => setPasswordConfirmation(e.target.value)}
+                  autoComplete="current-password"
+                />
+              </td>
+            </tr>
 
-        <label htmlFor="email">Email</label>
-        <input
-          type="text"
-          id="email"
-          autoComplete="off"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+          </table>
+          <button type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
+            {/* {errors.map((err) => (
+              <Error key={err}>{err}</Error>
+            ))} */}
+            {errors ? <p>{errors}</p> : null }
 
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          autoComplete="current-password"
-        />
-
-        <label htmlFor="password">Password Confirmation</label>
-        <input
-          type="password"
-          id="password_confirmation"
-          value={passwordConfirmation}
-          onChange={(e) => setPasswordConfirmation(e.target.value)}
-          autoComplete="current-password"
-        />
-
-        <button type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
-
-        {/* {errors.map((err) => (
-          <Error key={err}>{err}</Error>
-        ))} */}
-        {errors ? <h1>{errors}</h1> : null }
-
-    </form>
+        </form>
+      </div>
+    </div>
   );
 }
 
