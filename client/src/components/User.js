@@ -61,9 +61,9 @@ function User() {
     return(
         <div className="user-main">
             <div className="user-list">
-                <h3>Account Page</h3>
+                <h2>Account Page</h2>
                 <div>
-                    ads
+                    <h3>Classifieds</h3>
                     <ul>
                         {ads.map((ad) => (
                             <UserAd 
@@ -80,7 +80,7 @@ function User() {
                     </ul>
                 </div>
                 <div>
-                    events
+                    <h3>Events</h3>
                     <ul>
                         {events.map((event) => (
                             <UserEvents 
@@ -97,7 +97,7 @@ function User() {
                     </ul>
                 </div>
                 <div>
-                    services
+                    <h3>Services</h3>
                     <ul>
                         {services.map((service) => (
                             <UserServices 
@@ -114,7 +114,7 @@ function User() {
                     </ul>
                 </div>
                 <div>
-                    hotdog
+                    <h3>Hotdogs</h3>
                     <ul>
                         {hotdogs.map((hotdog) => (
                             <UserHotdogs 

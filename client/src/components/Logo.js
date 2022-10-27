@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import logo from '../images/driftLogo.png';
+import logo from '../images/drift-world-logo.png';
 
 function Logo(){
     return(

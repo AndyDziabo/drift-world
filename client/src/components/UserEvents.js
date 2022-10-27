@@ -25,7 +25,7 @@ function UserEvents({ event, onEventDelete, setCurrentEvent, setToggleAdEdit, se
 
     return(
         <li>
-            {event.name} <button onClick={handleEdit}>edit</button> <button onClick={handleDelete}>delete</button>
+            {event.name} <button className="button" onClick={handleEdit}>edit</button> <button className="button" onClick={handleDelete}>delete</button>
         </li>
     )
 }

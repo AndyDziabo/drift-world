@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Error from "./Error";
 import "./LoginStyle/login.css"
 
 function SignUpForm({ onLogin }) {
@@ -7,14 +8,12 @@ function SignUpForm({ onLogin }) {
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [errors, setErrors] = useState([]);
+  const [toggleError, setToggleError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("username: ", name);
-    console.log("email: ", email);
     setErrors([]);
-    setIsLoading(true);
     fetch("/signup", {
       method: "POST",
       headers: {
@@ -27,11 +26,14 @@ function SignUpForm({ onLogin }) {
         password_confirmation: passwordConfirmation,
       }),
     }).then((r) => {
-      setIsLoading(false);
       if (r.ok) {
         r.json().then((user) => onLogin(user));
       } else {
         r.json().then((err) => setErrors(err.errors));
+        setToggleError(true);
+        setTimeout(function(){
+          setToggleError(false);
+        },2400);
       }
     });
   }
@@ -40,7 +42,7 @@ function SignUpForm({ onLogin }) {
     <div className="main-form">
       <div className="table">
         <form onSubmit={handleSubmit}>
-          <table>
+          <table className="login-table">
             <tr>
               <td>
                 <label htmlFor="username">Username</label>
@@ -99,13 +101,9 @@ function SignUpForm({ onLogin }) {
             </tr>
 
           </table>
-          <button type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
-            {/* {errors.map((err) => (
-              <Error key={err}>{err}</Error>
-            ))} */}
-            {errors ? <p>{errors}</p> : null }
-
+          <button className="button" type="submit">Sign Up</button>
         </form>
+        {toggleError ? <Error key={errors} errors={errors} /> : null}
       </div>
     </div>
   );

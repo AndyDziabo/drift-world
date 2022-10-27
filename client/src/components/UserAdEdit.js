@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaFlagCheckered } from 'react-icons/fa';
 
 function UserAdEdit({ currentAd,  setToggleAdEdit  }) {
     const [title, setTitle] = useState(currentAd.title);
@@ -30,7 +31,7 @@ function UserAdEdit({ currentAd,  setToggleAdEdit  }) {
                 setToggleSuccess(true);
                 setTimeout(function(){
                     setToggleAdEdit(false);
-                },2400);
+                },3000);
             }else{
                 r.json().then((err) => setErrors(err.errors));
             }
@@ -56,7 +57,12 @@ function UserAdEdit({ currentAd,  setToggleAdEdit  }) {
                 <button className="button" onClick={handleCancel}>Cancel</button>
             </div>
             
-            {toggleSuccess ? "success" 
+            {toggleSuccess ? 
+                <div className="success-container">
+                    <FaFlagCheckered />  <FaFlagCheckered />  <FaFlagCheckered /> 
+                    <h2>Success</h2>
+                    <FaFlagCheckered />  <FaFlagCheckered />  <FaFlagCheckered /> 
+                </div>
             : 
             <form onSubmit={handleSubmit}>
                 <table>

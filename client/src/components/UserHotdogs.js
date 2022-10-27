@@ -25,7 +25,7 @@ function UserHotdogs({ hotdog, onHotdogDelete, setCurrentHotdog, setToggleAdEdit
 
     return(
         <li>
-            {hotdog.title} <button onClick={handleEdit}>edit</button> <button onClick={handleDelete}>delete</button>
+            {hotdog.title} <button className="button" onClick={handleEdit}>edit</button> <button className="button" onClick={handleDelete}>delete</button>
         </li>
     )
 }

@@ -10,7 +10,7 @@ body {
     border-radius: 15px;
     width: 30%;
     text-align: center;
-    margin-top: 200px;
+    margin-top: 70px;
     padding-bottom: 30px;
 
 }
@@ -27,4 +27,22 @@ body {
 
 .table td {
     width: 150px;
+}
+
+.login-error {
+    background-color: rgb(232, 211, 211);
+    margin: 10px 0px 10px 0px;
+    border-style: solid;
+    border-color: rgb(244, 1, 1);
+    border-radius: 10px;
+    border-width: 1px;
+    padding: 5px;
+}
+
+.login-table input {
+    border-radius: 10px;
+    padding: 2px 10px 2px 10px;
+    border-width: 1px;
+    border-color: #45a2c6;
+    margin: 5px 0px 5px 0px;
 }

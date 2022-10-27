@@ -25,7 +25,7 @@ function UserAd({ ad, onAdDelete, setCurrentAd, setToggleAdEdit, setToggleEventE
 
     return(
         <li>
-            {ad.title} <button onClick={handleEdit}>edit</button> <button onClick={handleDelete}>delete</button>
+            {ad.title} <button className="button" onClick={handleEdit}>edit</button> <button className="button" onClick={handleDelete}>delete</button>
         </li>
     )
 }

@@ -23,7 +23,13 @@ function App() {
     });
   }, []);
 
-  if (!user) return <Login onLogin={setUser} />;
+  if (!user) return (
+    <div>
+      <Logo />
+      <Login onLogin={setUser} />
+    </div>
+    
+    );
 
   return (
     <div>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaFlagCheckered } from 'react-icons/fa';
 
 function UserHotdogsEdit({ currentHotdog, setToggleHotdogEdit }) {
     const [title, setTitle] = useState(currentHotdog.title);
@@ -41,7 +42,12 @@ function UserHotdogsEdit({ currentHotdog, setToggleHotdogEdit }) {
                 <h3>Edit Hotdog</h3>
                 <button className="button" onClick={handleCancel}>Cancel</button>
             </div>
-            {toggleSuccess ? "success" 
+            {toggleSuccess ? 
+            <div className="success-container">
+                <FaFlagCheckered />  <FaFlagCheckered />  <FaFlagCheckered /> 
+                <h2>Success</h2>
+                <FaFlagCheckered />  <FaFlagCheckered />  <FaFlagCheckered /> 
+            </div> 
             : 
             <form onSubmit={handleSubmit}>
                 <table>

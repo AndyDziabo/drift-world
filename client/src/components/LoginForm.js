@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function LoginForm({ onLogin }) {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
+  const [toggleError, setToggleError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   function handleSubmit(e) {
@@ -21,15 +22,20 @@ function LoginForm({ onLogin }) {
         r.json().then((user) => onLogin(user));
       } else {
         r.json().then((err) => setErrors(err.errors));
+        setToggleError(true);
+        setTimeout(function(){
+          setToggleError(false);
+        },2400);
       }
     });
   }
+
 
   return (
     <div className="main-form">
       <div className="table">
         <form onSubmit={handleSubmit}>
-          <table>
+          <table className="login-table">
             <tr>
               <td>
                 <label htmlFor="username">Username</label>
@@ -58,16 +64,13 @@ function LoginForm({ onLogin }) {
                 />
               </td>
             </tr>
-            {/* {errors.map((err) => (
-              <Error key={err}>{err}</Error>
-            ))} */}
-
-            {errors ? <p>{errors}</p> : null }
           </table>
-          <button type="submit">
+          <button className="button" type="submit">
             {isLoading ? "Loading..." : "Login"}
           </button>
         </form>
+        <div className={toggleError ? "login-error" : "hide" }>{errors}</div>
+        
       </div>
     </div>
   );

@@ -11,14 +11,19 @@ body {
 }
 
 .logo {
-  width: 15%;
+  width: 480px;
   margin: auto;
 }
 
+.logo img {
+  height: 250px;
+}
+
 .logo:hover {
-  background-color: rgb(75, 149, 187);
-  border-color: #6a797f;
-  box-shadow: 0px 0px 55px #016a93;
+  background-color: #016a9362;
+  /* border-color: #6a797f; */
+  border-radius: 300px;
+  box-shadow: 0px 0px 185px #016a93;
 }
 
 .top {
@@ -172,4 +177,8 @@ body {
   background-color: rgb(118, 126, 130);
   border-color: #1c7fa7;
   box-shadow: 0px 0px 15px #1c7fa7;
+}
+
+.hide {
+  display: none;
 }

@@ -29,7 +29,7 @@ function Login({ onLogin }) {
           </div>
           <div>
             Already have an account? &nbsp;
-            <button onClick={() => setShowLogin(true)}>
+            <button className="button" onClick={() => setShowLogin(true)}>
               Log In
             </button>
           </div>

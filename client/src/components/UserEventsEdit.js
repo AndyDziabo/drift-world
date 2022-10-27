@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaFlagCheckered } from 'react-icons/fa';
 
 function UserEventsEdit({ currentEvent, setToggleEventEdit }) {
     const [name, setName] = useState(currentEvent.name);
@@ -49,7 +50,12 @@ function UserEventsEdit({ currentEvent, setToggleEventEdit }) {
                 <button className="button" onClick={handleCancel}>Cancel</button>
             </div>
             
-            {toggleSuccess ? "success" 
+            {toggleSuccess ? 
+            <div className="success-container">
+                <FaFlagCheckered />  <FaFlagCheckered />  <FaFlagCheckered /> 
+                <h2>Success</h2>
+                <FaFlagCheckered />  <FaFlagCheckered />  <FaFlagCheckered /> 
+            </div>  
             : 
             <form onSubmit={handleSubmit}>
                 <table>

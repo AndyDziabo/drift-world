@@ -25,7 +25,7 @@ function UserServices({ service, onServiceDelete, setCurrentService, setToggleAd
 
     return(
         <li>
-            {service.title} <button onClick={handleEdit}>edit</button> <button onClick={handleDelete}>delete</button>
+            {service.title} <button className="button" onClick={handleEdit}>edit</button> <button className="button" onClick={handleDelete}>delete</button>
         </li>
     )
 }
