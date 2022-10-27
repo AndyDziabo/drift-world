@@ -31,7 +31,7 @@ function MediaForm({ setShowMedia }) {
     return(
         <div>
             <div className="form-title">
-                Media Form
+                <h3>Media Form</h3>
             </div>
             
             <form className="form" onSubmit={handleSubmit}>
@@ -81,7 +81,7 @@ function MediaForm({ setShowMedia }) {
                     </tr>
                     <tr>
                         <td></td>
-                        <td>
+                        <td className="submit">
                             <input type="submit" value="Submit" />
                         </td>
                     </tr>

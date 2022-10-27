@@ -43,8 +43,12 @@ function UserEventsEdit({ currentEvent, setToggleEventEdit }) {
     }
 
     return(
-        <div>
-            Edit Events Form  <button onClick={handleCancel}>Cancel</button>
+        <div className="user-edit">
+            <div className="user-edit-title">
+                <h3>Edit Event</h3>
+                <button className="button" onClick={handleCancel}>Cancel</button>
+            </div>
+            
             {toggleSuccess ? "success" 
             : 
             <form onSubmit={handleSubmit}>
@@ -136,7 +140,7 @@ function UserEventsEdit({ currentEvent, setToggleEventEdit }) {
                     </tr>
                     <tr>
                         <td></td>
-                        <td>
+                        <td className="submit">
                             <input type="submit" value="Submit" />
                         </td>
                     </tr>

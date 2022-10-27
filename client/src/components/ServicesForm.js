@@ -33,7 +33,7 @@ function ServicesForm({ setShowService }) {
     return(
         <div>
             <div className="form-title">
-                Services Form
+                <h3>Services Form</h3>
             </div>
             
             <form className="form" onSubmit={handleSubmit}>
@@ -97,7 +97,7 @@ function ServicesForm({ setShowService }) {
                     </tr>
                     <tr>
                         <td></td>
-                        <td>
+                        <td className="submit">
                             <input type="submit" value="Submit" />
                         </td>
                     </tr>

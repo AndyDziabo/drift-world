@@ -12,11 +12,11 @@ function Media(){
       
     return (
         <div className="main-hotdog">
-            <div className="title">
+            <div className="main-title">
                 <h2>Media</h2>
                 <button onClick={handleClick}>{showMedia ? "Show Hotdogs" : "Create Hotdog"}</button>
             </div>
-            <div className="hotdogs">
+            <div className="main-body">
             {showMedia ? (
                 <>
                 <MediaForm setShowMedia={setShowMedia} />

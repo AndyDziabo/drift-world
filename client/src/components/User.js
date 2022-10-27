@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./UserStyle/user.css";
 import UserAd from "./UserAd";
 import UserAdEdit from "./UserAdEdit";
 import UserEvents from "./UserEvents";
@@ -60,7 +61,7 @@ function User() {
     return(
         <div className="user-main">
             <div className="user-list">
-                user page
+                <h3>Account Page</h3>
                 <div>
                     ads
                     <ul>
@@ -131,7 +132,7 @@ function User() {
                 </div>
                 
             </div>
-            <div className="user-edit">
+            <div>
                 {toggleAdEdit ? <UserAdEdit currentAd={currentAd} setToggleAdEdit={setToggleAdEdit} /> : null}
                 {toggleEventEdit ? <UserEventsEdit currentEvent={currentEvent} setToggleEventEdit={setToggleEventEdit} /> : null}
                 {toggleServiceEdit ? <UserServicesEdit currentService={currentService} setToggleServiceEdit={setToggleServiceEdit} /> : null}

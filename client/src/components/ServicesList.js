@@ -13,10 +13,10 @@ function ServicesList() {
     return(
         <div className="main-services-list">
             <div className="service-type">
-                Services List
+                <h3>Services List</h3>
             </div>
             
-            <ul className="services-list-ul">
+            <ul className="main-list-ul">
                 {services.map((service) => (
                     <ServiceCard key={service.id} service={service} />
                 ))}

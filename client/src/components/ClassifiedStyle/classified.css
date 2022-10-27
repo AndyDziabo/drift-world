@@ -2,47 +2,26 @@
     width: 100%;
 }
 
-.title {
-  background-color: aliceblue;
-  border-style: solid;
-  border-color: rgb(24, 130, 191);
-  border-radius: 15px;
-  margin: 30px 20px 60px 20px;
-  padding: 10px 30px 10px 30px;
+.ads-select select {
+  background-color: #1c80a7ca;
+  border: solid rgb(133, 133, 133);
+  border-width: 2px 2px 2px 0px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font: inherit;
+  padding: 10px 40px 8px 5px;
 }
-
-.title h2 {
-  display: inline;
-}
-
-.title button {
-  float: right;
-}
-
-.ads {
-  background-color: aliceblue;
-  border-style: solid;
-  border-color: rgb(24, 130, 191);
-  border-radius: 15px;
-  padding: 10px;
-}
-
-.main-ads-list ul {
-  list-style-type: none;
-}
-
 
 .ad-type {
-    float: left;
-    margin: 0px 10px ;
+  background-color: #1c80a7ca;
+  border: solid rgb(133, 133, 133);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-width: 2px 0px 2px 2px;
+  float: left;
+  padding: 10px 10px ;
 }
 
-.ads-list-ul {
-  background-color: rgb(192, 208, 222);
-  border-style: solid;
-  border-color: rgb(150, 167, 176);
-  border-radius: 15px;
-}
 
 .ads-list-thumbs {
   border-style: solid;
@@ -50,6 +29,14 @@
   border-width: 0px 0px 2px 0px;
   margin-bottom: 10px;
   margin-right: 40px;
+}
+
+.ads-list-thumbs:hover {
+  background-color: rgb(66, 137, 176);
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px #1c7fa7;
+  text-shadow: 0px 0px 5px #000000ac;
+  color: rgb(168, 163, 151);
 }
 
 .thumb-main {
@@ -64,6 +51,8 @@
 
 .thumb-image img {
   border-radius: 8px;
+  margin-top: 5px;
+  margin-left: 5px;
 }
   
 .thumb-image img {
@@ -85,6 +74,18 @@
 
 .ad-title button {
   float: right;
+  background-color: #45a2c6;
+  font: inherit;
+  border-style: solid;
+  border-color: rgb(118, 126, 130);
+  border-radius: 5px;
+  border-width: 2px;
+}
+
+.ad-title button:hover {
+  background-color: rgb(118, 126, 130);
+  border-color: #1c7fa7;
+  box-shadow: 0px 0px 15px #1c7fa7;
 }
 
 .ad-title h2 {
@@ -151,21 +152,42 @@
   /* min-height: 37px; */
 }
 
-.content {
-  padding: 2px 0px 2px 14px;
-}
-
-.posted-by {
+.comment-posted-by {
+  background-color: rgba(250, 235, 215, 0.69);
+  margin: 0px;
   padding: 2px 0px 2px 0px;
 }
+
+.comment-content {
+  background-color: rgba(239, 213, 180, 0.668);
+  padding: 2px 0px 2px 15px;
+}
+
+
 
 .make-comment {
   margin: 20px 0px 20px 60px;
 }
 
+.make-comment textarea {
+  border-radius: 10px;
+}
+
 .make-comment input {
   float: right;
   margin-right: 50px;
+  background-color: #45a2c6;
+  font: inherit;
+  border-style: solid;
+  border-color: rgb(118, 126, 130);
+  border-radius: 5px;
+  border-width: 2px;
+}
+
+.make-comment input:hover {
+  background-color: rgb(118, 126, 130);
+  border-color: #1c7fa7;
+  box-shadow: 0px 0px 15px #1c7fa7;
 }
 
 .form-title{
@@ -175,3 +197,4 @@
 .form {
   margin: 0px 0px 20px 50px;
 }
+

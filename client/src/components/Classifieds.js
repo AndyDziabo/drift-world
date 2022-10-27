@@ -12,11 +12,11 @@ function Classifieds({ user }){
       
     return (
         <div className="main-classified">
-            <div className="title">
+            <div className="main-title">
                 <h2>Classifieds</h2>
                 <button onClick={handleClick}>{showAd ? "Show Ads" : "Create Ad"}</button>
             </div>
-            <div className="ads">
+            <div className="main-body">
             {showAd ? (
                 <>
                 <ClassifiedsForm setShowAd={setShowAd} user={user}  />

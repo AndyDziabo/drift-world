@@ -46,21 +46,5 @@ function NavBar({ user, setUser }) {
       </div>
     );
   }
-
-
-
-  
-  //   return (
-  //     <div className="nav">
-  //       <span>
-  //         <span>Welcome, </span> 
-  //         <NavLink to="/user" exact>
-  //           {user ? user.name : "please login"}
-  //         </NavLink>
-  //       </span>
-  //       <button onClick={handleLogoutClick}>Logout</button>
-  //     </div>
-  //   );
-  // }
   
   export default NavBar;

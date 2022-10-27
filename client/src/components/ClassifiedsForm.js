@@ -36,7 +36,7 @@ function ClassifiedsForm({ setShowAd, user }) {
     return(
         <div>
             <div className="form-title">
-                Classifieds Form
+                <h3>Classifieds Form</h3>
             </div>
             <form className="form" onSubmit={handleSubmit}>
                 <table>
@@ -122,7 +122,7 @@ function ClassifiedsForm({ setShowAd, user }) {
                     </tr>
                     <tr>
                         <td></td>
-                        <td>
+                        <td className="submit">
                             <input type="submit" value="Submit" />
                         </td>
                     </tr>

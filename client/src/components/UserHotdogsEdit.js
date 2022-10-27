@@ -36,8 +36,11 @@ function UserHotdogsEdit({ currentHotdog, setToggleHotdogEdit }) {
     }
 
     return(
-        <div>
-            Edit Hotdog Form <button onClick={handleCancel}>Cancel</button>
+        <div className="user-edit">
+            <div className="user-edit-title">
+                <h3>Edit Hotdog</h3>
+                <button className="button" onClick={handleCancel}>Cancel</button>
+            </div>
             {toggleSuccess ? "success" 
             : 
             <form onSubmit={handleSubmit}>
@@ -87,7 +90,7 @@ function UserHotdogsEdit({ currentHotdog, setToggleHotdogEdit }) {
                     </tr>
                     <tr>
                         <td></td>
-                        <td>
+                        <td className="submit">
                             <input type="submit" value="Submit" />
                         </td>
                     </tr>

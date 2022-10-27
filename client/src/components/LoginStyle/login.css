@@ -4,7 +4,7 @@ body {
 
 .main {
     margin: auto;
-    background-color: aliceblue;
+    background-color: rgba(240, 248, 255, 0.686);
     border-style: solid;
     border-color: rgb(24, 130, 191);
     border-radius: 15px;
@@ -12,6 +12,7 @@ body {
     text-align: center;
     margin-top: 200px;
     padding-bottom: 30px;
+
 }
 
 .main-form {

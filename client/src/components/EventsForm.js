@@ -39,7 +39,7 @@ function EventsForm({ setShowEvent }) {
     return(
         <div>
             <div className="form-title">
-                Events Form
+                <h3>Events Form</h3>
             </div>
             
             <div className="date-picker">
@@ -121,7 +121,7 @@ function EventsForm({ setShowEvent }) {
                     </tr>
                     <tr>
                         <td></td>
-                        <td>
+                        <td className="submit">
                             <input type="submit" value="Submit" />
                         </td>
                     </tr>

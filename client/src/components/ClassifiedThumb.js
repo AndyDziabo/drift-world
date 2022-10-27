@@ -8,8 +8,8 @@ function ClassifiedThumb({ classified, setToggle, setAd }) {
     }
     return(
         <li className="ads-list-thumbs">
-            <div className="thumb-main">
-                <div className="thumb-image" onClick={handleClick}>
+            <div className="thumb-main" onClick={handleClick}>
+                <div className="thumb-image" >
                     <img src={classified.image} />
                 </div>
                 <div className="thumb-info">

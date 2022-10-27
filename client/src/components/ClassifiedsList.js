@@ -35,12 +35,12 @@ function ClassifiedsList() {
     }
 
     return(
-        <div className="main-ads-list">
+        <div className="main-list">
             <div>
                 <div className="ad-type">
                     Select Ad Type
                 </div>
-                <div>
+                <div className="ads-select">
                     <select onChange={handleSelect}>
                         <option value="all">All Ads</option>
                         <option value="vehicles">Vehicles</option>
@@ -50,13 +50,13 @@ function ClassifiedsList() {
             </div>
             
             {toggle ?
-            <ul className="ads-list-ul">
+            <ul className="main-list-ul">
                 {selectedAds.map((classified) => (
                     <ClassifiedThumb key={classified.id} classified={classified} setToggle={setToggle} setAd={setAd} />
                 ))}
             </ul>
             :
-            <ul className="ads-list-ul">
+            <ul className="main-list-ul">
                 <ClassifiedCard classified={ad} setToggle={setToggle} />
             </ul>
             }

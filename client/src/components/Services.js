@@ -12,11 +12,11 @@ function Services(){
       
     return (
         <div className="main-service">
-            <div className="title">
+            <div className="main-title">
                 <h2>Services</h2>
                 <button onClick={handleClick}>{showService ? "Show Services" : "Create Service"}</button>
             </div>
-            <div className="services">
+            <div className="main-body">
             {showService ? (
                 <>
                 <ServicesForm setShowService={setShowService} />

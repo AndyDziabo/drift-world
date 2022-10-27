@@ -38,8 +38,11 @@ function UserServicesEdit({ currentService, setToggleServiceEdit }) {
     }
 
     return(
-        <div>
-            Edit Services Form <button onClick={handleCancel}>Cancel</button>
+        <div className="user-edit">
+            <div className="user-edit-title">
+                <h3>Edit Service</h3>
+                <button className="button" onClick={handleCancel}>Cancel</button>
+            </div>
             {toggleSuccess ? "success" 
             :
             <form onSubmit={handleSubmit}>
@@ -103,7 +106,7 @@ function UserServicesEdit({ currentService, setToggleServiceEdit }) {
                     </tr>
                     <tr>
                         <td></td>
-                        <td>
+                        <td className="submit">
                             <input type="submit" value="Submit" />
                         </td>
                     </tr>

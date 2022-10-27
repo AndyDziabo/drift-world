@@ -5,26 +5,34 @@ function Home(){
     <div>
         <div className="top">
             <div className="top-left">
-                <NavLink to="/classifieds" exact>
-                    Classifieds
-                </NavLink>
+                <div className="page-selection">
+                    <NavLink to="/classifieds" exact>
+                        Classifieds
+                    </NavLink>
+                </div>
             </div>
             <div className="top-right">
-                <NavLink to="/events" exact>
-                    Events
-                </NavLink>
+                <div className="page-selection">
+                    <NavLink to="/events" exact>
+                        Events
+                    </NavLink>
+                </div>
             </div>
         </div>
         <div className="bottom">
             <div className="bottom-left">
-                <NavLink to="/Services" exact>
-                    Services
-                </NavLink>
+                <div className="page-selection">
+                    <NavLink to="/Services" exact>
+                        Services
+                    </NavLink>
+                </div>
             </div>
             <div className="bottom-right">
-                <NavLink to="/media" exact>
-                    Hot Dog
-                </NavLink>
+                <div className="page-selection">
+                    <NavLink to="/media" exact>
+                        Hot Dog
+                    </NavLink>
+                </div>
             </div>
         </div>
     </div>

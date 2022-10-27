@@ -5,10 +5,10 @@ function ClassifiedComments({ comment }) {
     return(
         <li>
             <div className="comment-container">
-                <div className="posted-by">
+                <div className="comment-posted-by">
                     {comment.user.name}
                 </div>
-                <div className="content">
+                <div className="comment-content">
                     {comment.comment}
                 </div>
             </div>

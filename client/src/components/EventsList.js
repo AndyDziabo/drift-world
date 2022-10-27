@@ -12,12 +12,12 @@ function EventsList() {
 
 
     return(
-        <div className="main-events-list">
+        <div className="main-list">
             <div className="event-type">
-                Events List
+                <h3>Events List</h3>
             </div>
             
-            <ul className="events-list-ul">
+            <ul className="main-list-ul">
                 {events.map((event) => (
                     <EventCard key={event.id} event={event} />
                 ))}

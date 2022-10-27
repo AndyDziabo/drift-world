@@ -12,11 +12,11 @@ function Events(){
       
     return (
         <div className="main-event">
-            <div className="title">
+            <div className="main-title">
                 <h2>Events</h2>
                 <button onClick={handleClick}>{showEvent ? "Show Events" : "Create Event"}</button>
             </div>
-            <div className="events">
+            <div className="main-body">
             {showEvent ? (
                 <>
                 <EventsForm setShowEvent={setShowEvent} />

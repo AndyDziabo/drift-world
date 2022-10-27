@@ -50,8 +50,12 @@ function UserAdEdit({ currentAd,  setToggleAdEdit  }) {
     }
 
     return(
-        <div>
-            Edit Classifieds Form <button onClick={handleCancel}>Cancel</button>
+        <div className="user-edit">
+            <div className="user-edit-title">
+                <h3>Edit Classified</h3>
+                <button className="button" onClick={handleCancel}>Cancel</button>
+            </div>
+            
             {toggleSuccess ? "success" 
             : 
             <form onSubmit={handleSubmit}>
@@ -139,7 +143,7 @@ function UserAdEdit({ currentAd,  setToggleAdEdit  }) {
                     <tr>
                         <td></td>
                         <td>
-                            <td>
+                            <td className="submit">
                                 <input type="submit" value="Submit" />
                             </td>
                         </td>
