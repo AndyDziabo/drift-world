@@ -1,4 +1,8 @@
 import { NavLink } from "react-router-dom";
+import classifieds from '../images/classifieds.png';
+import events from '../images/events.png';
+import services from '../images/services.png';
+import hotdogs from '../images/hotdogs.png';
 
 function Home(){
     return(
@@ -7,14 +11,14 @@ function Home(){
             <div className="top-left">
                 <div className="page-selection">
                     <NavLink to="/classifieds" exact>
-                        Classifieds
+                        <img alt="drift-world" src={classifieds} />
                     </NavLink>
                 </div>
             </div>
             <div className="top-right">
                 <div className="page-selection">
                     <NavLink to="/events" exact>
-                        Events
+                        <img alt="drift-world" src={events} />
                     </NavLink>
                 </div>
             </div>
@@ -23,14 +27,14 @@ function Home(){
             <div className="bottom-left">
                 <div className="page-selection">
                     <NavLink to="/Services" exact>
-                        Services
+                        <img alt="drift-world" src={services} />
                     </NavLink>
                 </div>
             </div>
             <div className="bottom-right">
                 <div className="page-selection">
                     <NavLink to="/media" exact>
-                        Hot Dog
+                        <img alt="drift-world" src={hotdogs} />
                     </NavLink>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 .nav-main {
     position: relative;
     height: 60px;
+    font-weight: bolder;
 }
 
 .dropdown {
@@ -16,6 +17,7 @@
   border-color: rgb(118, 126, 130);
   border-radius: 5px;
   border-width: 2px;
+  padding: 4px 15px;
 }
 
 .dropdown button:hover {

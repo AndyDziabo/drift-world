@@ -9,21 +9,23 @@ function Login({ onLogin }) {
 
   return (
     <div className="main">
-      <h1>Login</h1>
+      
       {showLogin ? (
         <>
+          <h1>Login</h1>
           <div>
             <LoginForm onLogin={onLogin} />
           </div>
           <div>
             Don't have an account? &nbsp;
-            <button onClick={() => setShowLogin(false)}>
+            <button className="button" onClick={() => setShowLogin(false)}>
               Sign Up
             </button>
           </div>
         </>
       ) : (
         <>
+          <h1>Signup</h1>
           <div>
             <SignUpForm onLogin={onLogin} />
           </div>

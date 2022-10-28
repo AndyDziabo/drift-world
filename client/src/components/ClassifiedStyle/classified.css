@@ -114,7 +114,8 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 580px;
+  max-width: 580px;
+  max-height: 390px;
   border-radius: 15px;
 }
 
